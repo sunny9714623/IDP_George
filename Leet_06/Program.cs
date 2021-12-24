@@ -11,11 +11,11 @@ namespace Leet_06
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            Console.WriteLine(Convert("PAYPALISHIRING", 3));
+            Console.WriteLine(Convert("AB", 1));
         }
         public static string Convert(string s,int numRows)
         {
-            if (numRows == 0)
+            if (numRows == 1)
             {
                 return s;
             }
