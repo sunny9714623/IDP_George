@@ -56,7 +56,7 @@ namespace Time1_3
                     add /= 10;
                     l3Back = l3Back.next;
                 }
-                l1 = l1 ?.next;
+                l1 = l1 ?.next; // l1 = l1==null? l1:l1.next;
                 l2 = l2 ?.next;
             }
             return l3;

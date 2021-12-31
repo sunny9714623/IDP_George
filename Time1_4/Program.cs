@@ -14,13 +14,13 @@ namespace Time1_4
         //    int max = 0;
         //    char[] str = s.ToCharArray();
         //    System.Collections.Generic.List<char> chin = new System.Collections.Generic.List<char>();
-        //    foreach(char ch in str)
+        //    foreach (char ch in str)
         //    {
         //        if (chin.Contains(ch))
         //        {
         //            max = max > chin.Count ? max : chin.Count;
         //            chin.Add(ch);
-        //            chin = chin.GetRange(chin.IndexOf(ch)+1, chin.Count - chin.IndexOf(ch) - 1);
+        //            chin = chin.GetRange(chin.IndexOf(ch) + 1, chin.Count - chin.IndexOf(ch) - 1);
         //        }
         //        else
         //        {
