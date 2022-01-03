@@ -42,7 +42,7 @@ namespace Leet_08
             {
                 return 0;
             }
-            return fu ? double.Parse(str)*-1<=(int.MinValue)? int.MinValue : int.Parse(str) * -1 : double.Parse(str)>int.MaxValue? int.MaxValue : int.Parse(str);
+            return fu ? double.Parse(str) * -1 <= (int.MinValue) ? int.MinValue : int.Parse(str) * -1 : double.Parse(str) > int.MaxValue ? int.MaxValue : int.Parse(str);
         }
     }
 }
