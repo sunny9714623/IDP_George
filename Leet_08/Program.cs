@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Leet_08
@@ -11,8 +12,11 @@ namespace Leet_08
             int result = test.MyAtoi("-2147483648");
             Console.WriteLine(result);
             test.GetTask2();
+            Console.WriteLine("Main方法中:");
             result = test.MyAtoi("-216000000");
             Console.WriteLine(result);
+            Console.WriteLine("在GetTaskCopy中");
+            test.GetTaskCopy();
             Console.ReadKey();
         }
 
@@ -20,6 +24,7 @@ namespace Leet_08
         {
             Task<int> task = this.GetTask();
             int abc = await task;
+            Console.WriteLine("GetTask2:结果是");
             Console.WriteLine(abc);
         }
         public async Task<int> GetTask()
@@ -46,6 +51,26 @@ namespace Leet_08
             //    }
             //});
             return result;
+        }
+
+        public void GetTaskCopy()
+        {
+            for(int i = 0; i < 10; i++)
+            {
+                Action action = () => GetTotal();
+                Task.Run(action);
+            }
+        }
+        public void GetTotal()
+        {
+            int result = 0;
+            Console.WriteLine($"{Thread.CurrentThread.ManagedThreadId} begin");
+            for (int i = 0; i < 100; i++)
+            {
+                result += MyAtoi("-23");
+            };
+            Console.WriteLine($"{ Thread.CurrentThread.ManagedThreadId}end");
+            Console.WriteLine(result);
         }
         public int MyAtoi(string s)
         {
