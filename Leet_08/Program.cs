@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace Leet_08
 {
@@ -6,11 +7,47 @@ namespace Leet_08
     {
         static void Main(string[] args)
         {
-            int result = MyAtoi("-2147483648");
+            var test = new Program();
+            int result = test.MyAtoi("-2147483648");
             Console.WriteLine(result);
+            test.GetTask2();
+            result = test.MyAtoi("-216000000");
+            Console.WriteLine(result);
+            Console.ReadKey();
         }
 
-        public static int MyAtoi(string s)
+        public async void GetTask2()
+        {
+            Task<int> task = this.GetTask();
+            int abc = await task;
+            Console.WriteLine(abc);
+        }
+        public async Task<int> GetTask()
+        {
+            int result = 0;
+            Func<int> action = () =>
+            {
+                for (int i = 0; i < 100; i++)
+                {
+                    result += MyAtoi("-23");
+                    Console.WriteLine(result);
+                };
+                return result;
+            };
+            await Task<int>.Run(action);
+            //    () =>
+            //{
+            //    int num;
+            //    for (int i = 0; i < 100; i++)
+            //    {
+            //        num = action("-23");
+            //        result += num;
+            //        Console.WriteLine(result);
+            //    }
+            //});
+            return result;
+        }
+        public int MyAtoi(string s)
         {
             s = s.Trim();
             int i = 0;
