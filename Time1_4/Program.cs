@@ -2,6 +2,9 @@
 
 namespace Time1_4
 {
+    /// <summary>
+    /// 给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
