@@ -10,7 +10,7 @@ namespace Leet_14
     {
         static void Main(string[] args)
         {
-            string[] strs = new string[] { "dog", "racecar", "car" };
+            string[] strs = new string[] { "flower", "flow", "flight" };
             string s = LongestCommonPrefix(strs);
             Console.WriteLine(s);
         }
@@ -27,6 +27,7 @@ namespace Leet_14
                     if (!str.StartsWith(s))
                     {
                         s = s.Remove(s.Length - 1);
+                        return s;
                     }
                 }
                 i++;
