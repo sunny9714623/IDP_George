@@ -16,13 +16,13 @@ namespace Leet_26
 
         public static int RemoveDuplicates(int[] nums)
         {
-            int curIndex,curNumber,preIndex=0;
+            int curIndex,preIndex=0;
             // 如果只有一个元素
             if (nums.Length == 0)
             {
                 return 0;
             }
-            curIndex = 0; curNumber = nums[curIndex];
+            curIndex = 0;
             // 如果全是重复元素，返回1
             if (nums[curIndex] == nums[nums.Length - 1])
             {
