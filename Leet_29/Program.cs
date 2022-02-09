@@ -44,8 +44,8 @@ namespace Leet_29
                 int divisor2 = divisor, test = 1;
                 while (divisor2>=dividend-divisor2)
                 {
-                    divisor2 = divisor2 << 1;
-                    test = test << 1;
+                    divisor2 <<= 1;
+                    test <<= 1;
                 }
                 dividend -= divisor2;
                 ans += test;
