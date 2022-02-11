@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace AdvancedCourse
@@ -15,6 +16,13 @@ namespace AdvancedCourse
         /// <param name="tParameter"></param>
         public static void Show<T>(T tParameter) where T : People
         {
+            IEnumerable<int> intList = new List<int>();
+            Action<int> iAction = null;
+            Bird bird1 = new Sparrow();
+            Sparrow sparrow1 = new Sparrow();
+            List<Bird> birds = new List<Sparrow>().Select(t=>(Bird)t).ToList();
+            // 协变：接口泛型参数加了个out，就是为了解决刚才的不和谐
+            IEnumerable<Bird> birds1 = new List<Sparrow>();
             Console.WriteLine("This is {0},parameter={1},type={2}", typeof(GenericMethod), tParameter.ToString(), tParameter.GetType().Name);
             Console.WriteLine(tParameter.Id);
             Console.WriteLine(tParameter.Name);
@@ -34,6 +42,14 @@ namespace AdvancedCourse
             // return default;//语法糖，会根据T的类型，去产生一个默认值
             T t = new T();
             return default(T);
+        }
+        public class Bird
+        {
+            public int Id { get; set; }
+        }
+        public class Sparrow : Bird
+        {
+            public string Name { get; set; }
         }
     }
 }
