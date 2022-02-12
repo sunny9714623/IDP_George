@@ -63,8 +63,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Leet_29", "Leet_29\Leet_29.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Leet_30", "Leet_30\Leet_30.csproj", "{20559F41-5B14-4ECA-B79D-DD6D5A69E49E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvancedCourse", "AdvancedCourse\AdvancedCourse.csproj", "{ACF6D38C-7A71-418B-9BCB-FC8045566945}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyReflection", "MyReflection\MyReflection.csproj", "{C77C2348-1B70-464E-BE7E-749F01E9A3A5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ruanmou.DB.Interface", "Ruanmou.DB.Interface\Ruanmou.DB.Interface.csproj", "{3A76D2C5-E1FD-487F-A596-AA81F492D950}"
