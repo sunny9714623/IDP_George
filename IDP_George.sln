@@ -81,6 +81,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leet_36", "Leet_36\Leet_36.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ruanmou.DB.Oracle", "Ruanmou.DB.Oracle\Ruanmou.DB.Oracle.csproj", "{4A4BABDB-CBD2-411E-832E-B6A1D13DCC69}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leet_34", "Leet_34\Leet_34.csproj", "{B7232C59-0842-44ED-A6D7-52169002AF16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -243,6 +245,10 @@ Global
 		{4A4BABDB-CBD2-411E-832E-B6A1D13DCC69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A4BABDB-CBD2-411E-832E-B6A1D13DCC69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A4BABDB-CBD2-411E-832E-B6A1D13DCC69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7232C59-0842-44ED-A6D7-52169002AF16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7232C59-0842-44ED-A6D7-52169002AF16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7232C59-0842-44ED-A6D7-52169002AF16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7232C59-0842-44ED-A6D7-52169002AF16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

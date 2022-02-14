@@ -77,6 +77,42 @@ namespace MyReflection
                     MethodInfo method = testType.GetMethod("Show1");
                     method.Invoke(oTest1, null);
                 }
+                {
+                    MethodInfo method = testType.GetMethod("Show2"); // 带参数
+                    method.Invoke(oTest1, new object[] {1332 });
+                }
+                {
+                    MethodInfo method = testType.GetMethod("Show5"); // 静态的
+                    method.Invoke(oTest1, new object[] { "修罗" });
+                    method.Invoke(null, new object[] { "修罗" }); // 静态方法不需要实例化
+                }
+                {
+                    MethodInfo method = testType.GetMethod("Show3",new Type[] { }); // 重载方法,没有参数
+                    method.Invoke(oTest1, new object[] {});
+                }
+                {
+                    MethodInfo method = testType.GetMethod("Show3", new Type[] {typeof(int) }); // 重载方法,没有参数
+                    method.Invoke(oTest1, new object[] { 1406});
+                }
+                {
+                    MethodInfo method = testType.GetMethod("Show3", new Type[] { typeof(int),typeof(string) }); // 重载方法,没有参数
+                    method.Invoke(oTest1, new object[] { 1406,"test" });
+                }
+                {
+                    MethodInfo method = testType.GetMethod("Show3", new Type[] { typeof(string) }); // 重载方法,没有参数
+                    method.Invoke(oTest1, new object[] { "晴空" });
+                }
+                {
+                    MethodInfo method = testType.GetMethod("Show4",BindingFlags.Instance | BindingFlags.NonPublic); // 私有方法
+                    method.Invoke(oTest1, new object[] { "George" });
+                }
+                {
+                    Type genericType = assembly.GetType("Ruanmou.DB.SqlServer.GenericMethod");  // 普通类型里面有个泛型方法
+                    object oGeneric = Activator.CreateInstance(genericType);
+                    MethodInfo method = genericType.GetMethod("Show");  //泛型方法不需要，Type genericType = assembly.GetType("Ruanmou.DB.SqlServer.GenericClass`3");
+                    MethodInfo methodNew = method.MakeGenericMethod(typeof(int), typeof(string), typeof(int)); // 泛型需要进行makeGenericMethod
+                    methodNew.Invoke(oGeneric, new object[] { 1325, "george", 321 });
+                }
                 #endregion
             }
             catch (Exception ex)
