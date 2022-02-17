@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-
+/// <summary>
+/// 给定一个候选人编号的集合 candidates 和一个目标数 target ，找出 candidates
+/// 中所有可以使数字和为 target 的组合。
+/// candidates 中的每个数字在每个组合中只能使用 一次 。
+/// 注意：解集不能包含重复的组合。
+/// </summary>
 namespace Leet_40
 {
     class Program
@@ -10,11 +15,12 @@ namespace Leet_40
         public static List<List<int>> ans = new List<List<int>>();
         static void Main(string[] args)
         {
-            int[] nums = new int[] { 10, 1, 2, 7, 6, 1, 5 };
-            CombinationSum2(nums, 8);
+            int[] nums = new int[] { 1,1,2,6 };
+            CombinationSum2(nums, 9);
         }
         public static IList<IList<int>> CombinationSum2(int[] candidates,int target)
         {
+            Array.Sort(candidates);
             GetSumIndex(candidates, target, 0);
             return ans.ToArray();
         }
@@ -26,13 +32,21 @@ namespace Leet_40
                 return;
             }
             if (index == candidates.Length) return;
-            if (target - candidates[index] >= 0)
+            for(int i = index; i < candidates.Length; i++) // 进入一层for，并且i=index，说明index被选了，
+                                                           // i==index说明刚选这个，执行一次循环一定会选一个数
             {
-                res.Add(candidates[index]);
-                GetSumIndex(candidates, target - candidates[index], index + 1);
-                res.RemoveAt(res.Count - 1);
+                if (i > index && candidates[i] == candidates[i - 1]) continue;
+                if (target - candidates[i] >= 0)
+                {
+                    res.Add(candidates[i]);
+                    GetSumIndex(candidates, target - candidates[i], i + 1);
+                    res.RemoveAt(res.Count - 1);
+                }
+                else //剪枝
+                {
+                    break;
+                }
             }
-            GetSumIndex(candidates, target, index + 1);
         }
     }
 }
