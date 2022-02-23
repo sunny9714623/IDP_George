@@ -62,25 +62,61 @@ namespace Leet_42
         //}
 
         ///使用递减栈
+        //public static int Trap(int[] height)
+        //{
+        //    int ans = 0, i = 0;
+        //    Stack<int> s = new Stack<int>(); // 这里需要存索引，而不是存高度
+        //    while (i < height.Length)
+        //    {
+        //        while (s.Count != 0 && height[i] > height[s.Peek()])
+        //        {
+        //            int nowIndex = s.Pop();
+        //            if (s.Count == 0)
+        //            {
+        //                break; // 没有左边的，跳出循环
+        //            }
+        //            int leftIndex = s.Peek();
+        //            int width = i - leftIndex - 1;
+        //            int high = Math.Min(height[leftIndex], height[i]) - height[nowIndex];
+        //            ans += width * high;
+        //        }
+        //        s.Push(i++);
+        //    }
+        //    return ans;
+        //}
+
+        /// 双指针，这里使用left和right表示当前遍历到的方块，可以用大的那边当做边界
         public static int Trap(int[] height)
         {
-            int ans = 0, i = 0;
-            Stack<int> s = new Stack<int>(); // 这里需要存索引，而不是存高度
-            while (i < height.Length)
+            int ans = 0;
+            int length = height.Length;
+            int left = 0, right = length - 1, leftMax = 0, rightMax = 0;
+            while (left < right)
             {
-                while (s.Count != 0 && height[i] > height[s.Peek()])
+                if (height[left] < height[right])
                 {
-                    int nowIndex = s.Pop();
-                    if (s.Count == 0)
+                    if (height[left] > leftMax)
                     {
-                        break; // 没有左边的，跳出循环
+                        leftMax = height[left];
                     }
-                    int leftIndex = s.Peek();
-                    int width = i - leftIndex - 1;
-                    int high = Math.Min(height[leftIndex], height[i]) - height[nowIndex];
-                    ans += width * high;
+                    else
+                    {
+                        ans += leftMax - height[left];
+                    }
+                    left++;
                 }
-                s.Push(i++);
+                else
+                {
+                    if (height[right] > rightMax)
+                    {
+                        rightMax = height[right];
+                    }
+                    else
+                    {
+                        ans += rightMax - height[right];
+                    }
+                    right--;
+                }
             }
             return ans;
         }
