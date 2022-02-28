@@ -35,8 +35,8 @@ namespace Leet_44
             {
                 for(int j = 1; j <= pLenth; j++)
                 {
-                    if (p[j-1] == '?' || s[i-1] == p[j-1]) dp[i, j] = dp[i - 1, j - 1];
-                    if (p[j-1] == '*')
+                    if (p[j - 1] == '?' || s[i - 1] == p[j - 1]) dp[i, j] = dp[i - 1, j - 1];
+                    if (p[j - 1] == '*')
                         dp[i, j] = dp[i - 1, j] | dp[i, j - 1];
                     // dp[i-1,j]代表使用*，dp[i][j-1]代表不使用*
                 }
