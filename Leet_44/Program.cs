@@ -21,7 +21,7 @@ namespace Leet_44
         {
             int sLenth = s.Length, pLenth = p.Length;
             bool[,] dp = new bool[sLenth + 1, pLenth + 1]; // +1 防止s或者p为空， 默认为false,
-                                                           // dp[i][j]前i个字符和前j个字符能否匹配
+                                                           // dp[i][j]代表前i个字符和前j个字符能否匹配
             dp[0,0] = true;
             for(int j = 1; j <= pLenth; j++)
             {
