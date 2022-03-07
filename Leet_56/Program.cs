@@ -27,7 +27,7 @@ namespace Leet_56
                 int L = interval[0], R = interval[1];
                 if (merged.Count == 0 || merged[merged.Count - 1][1] < L)
                 {
-                    merged.Add(interval);
+                    merged.Add(new int[] { L, R });
                 }
                 else
                 {
