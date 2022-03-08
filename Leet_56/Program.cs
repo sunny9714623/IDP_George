@@ -12,21 +12,29 @@ namespace Leet_56
         static void Main(string[] args)
         {
             int[][] test = new int[3][];
-            test[0] = new int[] { 1, 6 };
-            test[1] = new int[] { 8, 10 };
+            test[0] = new int[] { 1, 8 };
+            test[1] = new int[] { 6, 10 };
             test[2] = new int[] { 15, 18 };
+            var ret = Merge(test);
         }
         public static int[][] Merge(int[][] intervals)
         {
             List<int[]> merged = new List<int[]>();
             // 对二维数组进行排序
             Array.Sort(intervals, (x, y) => x[0].CompareTo(y[0]));
-            merged.Add(intervals[0]);
             foreach(var interval in intervals)
             {
-
+                int L = interval[0], R = interval[1];
+                if (merged.Count == 0 || merged[merged.Count - 1][1] < L)
+                {
+                    merged.Add(new int[] { L, R });
+                }
+                else
+                {
+                    merged[merged.Count - 1][1] = Math.Max(merged[merged.Count - 1][1], R);
+                }
             }
-            return null;
+            return merged.ToArray();
         }
     }
 }
