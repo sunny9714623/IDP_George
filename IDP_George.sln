@@ -125,6 +125,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leet_59", "Leet_59\Leet_59.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leet_60", "Leet_60\Leet_60.csproj", "{2E1C2A51-E9D1-49B7-85CA-08E25FCBDF7F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leet_61", "Leet_61\Leet_61.csproj", "{07B36693-35DB-4583-AFA9-2C890D62A174}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leet_62", "Leet_62\Leet_62.csproj", "{D2AA3CD3-FA95-4956-A4BE-0A82172272E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -375,6 +379,14 @@ Global
 		{2E1C2A51-E9D1-49B7-85CA-08E25FCBDF7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E1C2A51-E9D1-49B7-85CA-08E25FCBDF7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E1C2A51-E9D1-49B7-85CA-08E25FCBDF7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07B36693-35DB-4583-AFA9-2C890D62A174}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07B36693-35DB-4583-AFA9-2C890D62A174}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07B36693-35DB-4583-AFA9-2C890D62A174}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07B36693-35DB-4583-AFA9-2C890D62A174}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2AA3CD3-FA95-4956-A4BE-0A82172272E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2AA3CD3-FA95-4956-A4BE-0A82172272E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2AA3CD3-FA95-4956-A4BE-0A82172272E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2AA3CD3-FA95-4956-A4BE-0A82172272E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

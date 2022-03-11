@@ -20,16 +20,27 @@ namespace Leet_60
         {
             string ret = GetPermutation(1, 1);
         }
+        /// <summary>
+        /// 1 想法1：计算出(1,n)的所有全排列，再选取第K个（超时） 
+        /// 2 想法2：既然所有的全排列是从小到大，那么可以对每一位的数字进行定位。
+        /// 例如，假如给定题目为（5,46）。固定第一位数，后面4位的全排列数为24，math.ceil(46/24)=2,
+        /// 即处于第1位数的第二个循环中，即第一位数为2.同理，对于固定第二位数，math.ceil(（46-24）/6)=4,
+        /// 即处于第2位数的第四个循环中（此时列表移除了已确定的数字2），即第2位数为5.
+        /// 同理，可依次推理出最后结果为“25341”.总复杂度为O（n）.
+        /// </summary>
+        /// <param name="n"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
         public static string GetPermutation(int n,int k)
         {
             StringBuilder s = new StringBuilder();
-            bool[] used = new bool[n+1];
+            bool[] used = new bool[n + 1];// 标记数组，表示当前数组是否使用。
             int[] factial = new int[n];
             factial[0] = 1;
             for (int i = 1; i < n; i++)
             {
                 factial[i] = i * factial[i - 1];
-            }
+            }// 计算n!的值
             for(int i = 0; i < n; i++)
             {
                 // 查找是当前循环第几个数。
