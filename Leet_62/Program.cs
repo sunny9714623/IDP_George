@@ -10,7 +10,7 @@ namespace Leet_62
     {
         static void Main(string[] args)
         {
-            int rt = UniquePaths(23, 12);
+            int rt = UniquePaths(3, 7);
         }
 
         // dfs+回溯  超时
@@ -59,15 +59,61 @@ namespace Leet_62
         //}
 
         /// 使用组合数学
+        //public static int UniquePaths(int m, int n)
+        //{
+        //    long ans = 1;
+        //    for(int i = n, y = 1; y < m; i++, y++)
+        //    {
+        //        ans = ans * i / y;
+        //    }
+        //    return (int)ans;
+        //}
+
+        /// 使用二维数组+动态规划
+        //public static int UniquePaths(int m, int n)
+        //{
+        //    var move = new int[m, n];
+        //    for(int i = 0; i < m; i++)
+        //    {
+        //        for(int j = 0; j < n; j++)
+        //        {
+        //            if (i == 0 || j == 0)
+        //            {
+        //                move[i, j] = 1;
+        //            }
+        //            else
+        //            {
+        //                move[i, j] = move[i - 1, j] + move[i, j - 1];
+        //            }
+        //        }
+        //    }
+        //    return move[m - 1, n - 1];
+        //}
+
+        // 使用一维数组+动态规划：因为二维数组总是从左到右,从上到下计算的
+        // 所以这里可以使用一位数组。
+        // 我们可以把m x n的二维dp数组优化成长度为n的一维dp数组，也就是说dp[j]只依赖dp[j]和dp[j-1]。
+        // 其中：
+        // dp[j] 表示dp[i - 1][j]
+        // dp[j - 1] 表示dp[i][j-1]
         public static int UniquePaths(int m, int n)
         {
-            int min = Math.Min(m, n);
-            int ans = 1;
-            for(int i = Math.Max(m,n), y = 1; y < min; i++, y++)
+            var move = new int[n];
+            for (int i = 0; i < m; i++)
             {
-                ans *= ans * i / y;
+                for (int j = 0; j < n; j++)
+                {
+                    if (i == 0 || j == 0)
+                    {
+                        move[j] = 1;
+                    }
+                    else
+                    {
+                        move[j] = move[j] + move[j - 1];
+                    }
+                }
             }
-            return ans;
+            return move[n - 1];
         }
     }
 }
