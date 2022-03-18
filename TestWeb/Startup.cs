@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -29,6 +30,7 @@ namespace TestWeb
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHealthChecks();
+            services.AddLogging();
             services.AddSwaggerGen(c=> {
                 c.SwaggerDoc("v1",new Microsoft.OpenApi.Models.OpenApiInfo { Title="Backend Api",Version="V1"});
             });

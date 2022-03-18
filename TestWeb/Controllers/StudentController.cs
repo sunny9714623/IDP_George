@@ -42,16 +42,16 @@ namespace TestWeb.Controllers
         }
 
         [HttpPut]
-        public IActionResult PutStudent([FromBody]Student student)
+        public async Task<IActionResult> PutStudent([FromBody]Student student)
         {
-            _studentDomainService.UpdateStudent(student);
-            return Ok();
+            var data = await _studentDomainService.UpdateStudentAsync(student);
+            return Ok(data);
         }
 
         [HttpDelete]
-        public IActionResult DeleteStudent(int id)
+        public async Task<IActionResult> DeleteStudent(int id)
         {
-            _studentDomainService.DeleteStudent(id);
+            await _studentDomainService.DeleteStudent(id);
             return Ok();
         }
     }

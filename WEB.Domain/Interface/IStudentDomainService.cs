@@ -9,9 +9,9 @@ namespace WEB.Domain.Interface
     public interface IStudentDomainService
     {
         Student GetStudentById(int id);
-        void UpdateStudent(Student student);
+        Task<Student> UpdateStudentAsync(Student student);
         List<Student> AddStudent(Student student);
-        void DeleteStudent(int id);
+        Task DeleteStudent(int id);
         List<Student> GetStudents();
     }
 }

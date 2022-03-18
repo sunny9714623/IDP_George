@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,9 +15,11 @@ namespace WEB.Domain.Service
     public class StudentDomainService : IStudentDomainService
     {
         private readonly WebDBContext _webDBContext;
-        public StudentDomainService(WebDBContext webDBContext)
+        private readonly ILogger<StudentDomainService> _logger;
+        public StudentDomainService(WebDBContext webDBContext, ILogger<StudentDomainService> logger)
         {
             _webDBContext = webDBContext;
+            _logger = logger;
         }
 
         public List<Student> AddStudent(Student student)
@@ -26,7 +29,7 @@ namespace WEB.Domain.Service
             return _webDBContext.Students.ToList();
         }
 
-        public void DeleteStudent(int id)
+        public async Task DeleteStudent(int id)
         {
             Student studet = _webDBContext.Students.FirstOrDefault(m => m.ID == id);
             if (studet == null)
@@ -34,7 +37,7 @@ namespace WEB.Domain.Service
                 throw new ArgumentException("Id 不存在");
             }
             _webDBContext.Students.Remove(studet);
-            _webDBContext.SaveChanges();
+            await _webDBContext.SaveChangesAsync();
         }
 
         public Student GetStudentById(int id)
@@ -47,10 +50,18 @@ namespace WEB.Domain.Service
             return  _webDBContext.Students.ToList();
         }
 
-        public void UpdateStudent(Student student)
+        public async Task<Student> UpdateStudentAsync(Student student)
         {
-            _webDBContext.Students.Update(student);
-            _webDBContext.SaveChanges();
+            try
+            {
+                _webDBContext.Students.Update(student);
+                await _webDBContext.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+            }
+            return student;
         }
     }
 }
