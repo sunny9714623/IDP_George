@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WEB.Application;
 using WEB.Domain.Entity;
+using WEB.Domain.Entity.Entity;
 using WEB.Domain.Interface;
 
 namespace TestWeb.Controllers
@@ -26,6 +27,13 @@ namespace TestWeb.Controllers
             return Ok(data);
         }
 
+        [HttpGet("Students")]
+        public IActionResult GetStudents()
+        {
+            var data = _studentDomainService.GetStudents();
+            return Ok(data);
+        }
+
         [HttpPost]
         public IActionResult PostStudent([FromBody]Student student)
         {
@@ -34,15 +42,17 @@ namespace TestWeb.Controllers
         }
 
         [HttpPut]
-        public IActionResult PutStudent()
+        public IActionResult PutStudent([FromBody]Student student)
         {
-            return default;
+            _studentDomainService.UpdateStudent(student);
+            return Ok();
         }
 
         [HttpDelete]
-        public IActionResult DeleteStudent()
+        public IActionResult DeleteStudent(int id)
         {
-            return default;
+            _studentDomainService.DeleteStudent(id);
+            return Ok();
         }
     }
 }

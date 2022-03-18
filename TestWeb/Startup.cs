@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 using WEB.Application;
 using WEB.Domain.Interface;
 using WEB.Domain.Service;
+using WEB.Infrusture;
 
 namespace TestWeb
 {
@@ -34,6 +36,8 @@ namespace TestWeb
             // 向容器注册服务：第一个参数为类型，第二个参数为实例
             services.AddTransient<IStudentApplication, StudentApplication>();
             services.AddTransient<IStudentDomainService, StudentDomainService>();
+            // 注册DBContext
+            services.AddDbContext<WebDBContext>(options => options.UseSqlServer(_configuration.GetConnectionString("Center")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

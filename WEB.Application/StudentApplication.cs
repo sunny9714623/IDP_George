@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using WEB.Domain.Entity;
+using WEB.Domain.Entity.Entity;
 using WEB.Domain.Interface;
 
 namespace WEB.Application

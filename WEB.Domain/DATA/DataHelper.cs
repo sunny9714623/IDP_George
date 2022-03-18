@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using WEB.Domain.Entity.Entity;
 
-namespace WEB.Domain.Entity
+namespace WEB.Domain.Data
 {
     public static class DataHelper
     {

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using WEB.Domain.Entity;
+using System.Threading.Tasks;
+using WEB.Domain.Entity.Entity;
 
 namespace WEB.Application
 {
