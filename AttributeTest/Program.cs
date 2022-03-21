@@ -11,8 +11,12 @@ namespace AttributeTest
             Console.WriteLine(memberInfo1.Name);
             TypeInfo typeInfo = typeof(MyAttributeTest).GetTypeInfo();
             Console.WriteLine(typeInfo.FullName);
-            var test = (typeInfo.GetCustomAttribute(typeof(MyAttribute), true)) as MyAttribute;
-            Console.WriteLine(test.Test);
+            var test = typeInfo.GetCustomAttributes(typeof(MyAttribute), true);
+            foreach (var item in test)
+            {
+                var a = item as MyAttribute;
+                Console.WriteLine(a.Test);
+            }
             MemberInfo[] memberInfos = typeof(MyAttributeTest).GetMembers();
             MethodInfo[] methodInfos = typeof(MyAttributeTest).GetMethods();
             FieldInfo[] fieldInfos = typeof(MyAttributeTest).GetFields();
@@ -21,7 +25,23 @@ namespace AttributeTest
             {
                 if ((item.GetCustomAttribute(typeof(MyAttribute), true)) is MyAttribute)
                 {
-                    var test1= (item.GetCustomAttribute(typeof(MyAttribute), true)) as MyAttribute;
+                    var test1 = (item.GetCustomAttribute(typeof(MyAttribute), true)) as MyAttribute;
+                    Console.WriteLine(item.Name);
+                    Console.WriteLine(test1.Test);
+                }
+            }
+            Console.WriteLine("***********");
+            TypeInfo typeInfo1 = typeof(MyAttributeTest1).GetTypeInfo();
+            Console.WriteLine(typeInfo1.FullName);
+            //var testt = (typeInfo1.GetCustomAttribute(typeof(MyAttribute), true)) as MyAttribute;
+            //Console.WriteLine(testt.Test);
+            Console.WriteLine("**********Property");
+            PropertyInfo[] propertyInfos1 = typeof(MyAttributeTest1).GetProperties();
+            foreach (var item in propertyInfos1)
+            {
+                if ((item.GetCustomAttribute(typeof(MyAttribute), true)) is MyAttribute)
+                {
+                    var test1 = (item.GetCustomAttribute(typeof(MyAttribute), true)) as MyAttribute;
                     Console.WriteLine(item.Name);
                     Console.WriteLine(test1.Test);
                 }
@@ -30,6 +50,7 @@ namespace AttributeTest
         }
     }
     [My("George", Id = 1)]
+    [My("George2",Id = 2)]
     public class MyAttributeTest
     {
         public int CardId;
@@ -38,8 +59,13 @@ namespace AttributeTest
         public int IdNumber { get; set; }
 
     }
+
+    public class MyAttributeTest1 : MyAttributeTest
+    {
+
+    }
     // 定义可以Usage的地方
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Property)]
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Property,Inherited = true,AllowMultiple = true)]
     public class MyAttribute : Attribute
     {
         private string name="123";
