@@ -48,6 +48,7 @@ namespace AttributeTest
         public MyAttribute(string test)
         {
             this.Test = test;
+            this.name = test;
         }
     }
 }
