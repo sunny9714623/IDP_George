@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 
 namespace AttributeTest
@@ -7,11 +9,30 @@ namespace AttributeTest
     {
         static void Main(string[] args)
         {
+
+            List<object> test111 = new List<object>{ "1", "2", "3" };
+            test111 = test111.Where(t => t == "1").ToList();
+            foreach (var item in test111)
+            {
+                Console.WriteLine($"item{item}");
+            }
+            Console.WriteLine(Test1.abc.ToString());
+            string test123 = "abc\nde";
+            foreach (var item in test123.Split(System.Environment.NewLine).ToList())
+            {
+                Console.WriteLine(item);
+            }
+            object a1 = "123";
+            Console.WriteLine(a1.ToString());
+            string s1 = "sdnbajdas";
+            s1 = s1.Replace("sad", "abc");
+            Console.WriteLine(s1);
             MemberInfo memberInfo1 = typeof(MyAttributeTest);
             Console.WriteLine(memberInfo1.Name);
             TypeInfo typeInfo = typeof(MyAttributeTest).GetTypeInfo();
             Console.WriteLine(typeInfo.FullName);
             var myatbut = new MyAttributeTest(2,100);
+            Console.WriteLine(myatbut.Test1.ToString());
             var test = typeInfo.GetCustomAttributes(typeof(MyAttribute), true);
             foreach (var item in test)
             {
@@ -67,6 +88,7 @@ namespace AttributeTest
     public class MyAttributeTest
     {
         public int CardId;
+        public Test1 Test1;
         private Guid Guiid => Guid.NewGuid();
         [My("property_attribute")]
         public int IdNumber { get; set; }
@@ -75,6 +97,12 @@ namespace AttributeTest
             this.CardId = cardId;
             this.IdNumber = IdNumber;
         }
+    }
+
+    public enum Test1 : short
+    {
+        abc=1,
+        bcd=2,
     }
 
     public class MyAttributeTest1 : MyAttributeTest
