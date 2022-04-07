@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reflection;
 
 namespace AttributeTest
@@ -9,7 +10,9 @@ namespace AttributeTest
     {
         static void Main(string[] args)
         {
+            Expression<Func<int,int,int>> exp = (m,n)=>m * n + 2;
 
+            Console.WriteLine(exp.Compile().Invoke(4, 5));
             List<object> test111 = new List<object>{ "1", "2", "3" };
             test111 = test111.Where(t => t == "1").ToList();
             foreach (var item in test111)

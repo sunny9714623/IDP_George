@@ -12,6 +12,7 @@ namespace TaskTest
             Console.WriteLine("test");
             test.TestAsync();
             Console.WriteLine("test1");
+            Console.ReadKey();
         }
     }
 
@@ -21,22 +22,26 @@ namespace TaskTest
         {
             Console.WriteLine("begin:");
             Task.Run(() => { for (int i = 0; i < 100; i++) { Console.WriteLine("Current ThreadId:" + System.Environment.CurrentManagedThreadId); Console.WriteLine(i); } });
+            Console.WriteLine("Current ThreadId:" + System.Environment.CurrentManagedThreadId);
             Console.WriteLine("end");
         }
 
-        public async Task TestAsync()
+        public async void TestAsync()
         {
             Console.WriteLine("Current ThreadId:"+System.Environment.CurrentManagedThreadId);
             Console.WriteLine("begin:");
             await Task.Run(() => { for (int i = 0; i < 100; i++) { Console.WriteLine("Current ThreadId:"+System.Environment.CurrentManagedThreadId); Console.WriteLine(i); } });
+            Console.WriteLine("Current ThreadId:" + System.Environment.CurrentManagedThreadId);
             Console.WriteLine("end");
         }
 
-        public async Task TestWaitAsync()
+        public void TestWaitAsync()
         {
             Console.WriteLine("TestWaitAsync");
             Console.WriteLine("Current ThreadId:" + System.Environment.CurrentManagedThreadId);
-            await TestAsync();
+            TestAsync();
+            Console.WriteLine("TestWaitAsync ThreadId:" + System.Environment.CurrentManagedThreadId);
+            Console.WriteLine("TestAsync completed");
         }
 
     }
