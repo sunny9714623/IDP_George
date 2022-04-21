@@ -75,6 +75,7 @@ namespace TaskTest
             {
                 Console.WriteLine(" Method 2");
             }
+            Task.Delay(1000);
         }
 
         public static void Method3(int count)
