@@ -12,7 +12,7 @@ namespace Leet_45
     {
         static void Main(string[] args)
         {
-            int[] nums = new int[] { 0 };
+            int[] nums = new int[] { 2,3,1,1,4};
             int ret = Jump(nums);
         }
 
