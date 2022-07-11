@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32126.315
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Time1_1", "IDP_George\Time1_1.csproj", "{D571FB85-E3D8-4328-BE57-9C01D5CB73CA}"
 EndProject
@@ -149,7 +149,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenericTest0321", "GenericT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AttributeTest", "AttributeTest\AttributeTest.csproj", "{BF30D4B0-2D1F-428C-899C-62FA2115ACFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskTest", "TaskTest\TaskTest.csproj", "{6A75DFEE-F85C-43E6-9BEC-0707560F65F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskTest", "TaskTest\TaskTest.csproj", "{6A75DFEE-F85C-43E6-9BEC-0707560F65F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leet_66", "Leet_66\Leet_66.csproj", "{C69B08A0-B7E6-45CF-A070-C65233B68F76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leet_64", "Leet_64\Leet_64.csproj", "{642C55A1-CC3A-47C2-BEA0-2D5B9B566FFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -453,6 +457,14 @@ Global
 		{6A75DFEE-F85C-43E6-9BEC-0707560F65F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A75DFEE-F85C-43E6-9BEC-0707560F65F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A75DFEE-F85C-43E6-9BEC-0707560F65F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C69B08A0-B7E6-45CF-A070-C65233B68F76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C69B08A0-B7E6-45CF-A070-C65233B68F76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C69B08A0-B7E6-45CF-A070-C65233B68F76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C69B08A0-B7E6-45CF-A070-C65233B68F76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{642C55A1-CC3A-47C2-BEA0-2D5B9B566FFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{642C55A1-CC3A-47C2-BEA0-2D5B9B566FFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{642C55A1-CC3A-47C2-BEA0-2D5B9B566FFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{642C55A1-CC3A-47C2-BEA0-2D5B9B566FFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
