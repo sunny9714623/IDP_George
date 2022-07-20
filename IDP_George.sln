@@ -151,9 +151,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AttributeTest", "AttributeT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskTest", "TaskTest\TaskTest.csproj", "{6A75DFEE-F85C-43E6-9BEC-0707560F65F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leet_66", "Leet_66\Leet_66.csproj", "{C69B08A0-B7E6-45CF-A070-C65233B68F76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Leet_66", "Leet_66\Leet_66.csproj", "{C69B08A0-B7E6-45CF-A070-C65233B68F76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leet_64", "Leet_64\Leet_64.csproj", "{642C55A1-CC3A-47C2-BEA0-2D5B9B566FFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Leet_64", "Leet_64\Leet_64.csproj", "{642C55A1-CC3A-47C2-BEA0-2D5B9B566FFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leet_54", "Leet_54\Leet_54.csproj", "{8CE10FF2-231E-48CC-B70F-FA81E2C7BB44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -465,6 +467,10 @@ Global
 		{642C55A1-CC3A-47C2-BEA0-2D5B9B566FFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{642C55A1-CC3A-47C2-BEA0-2D5B9B566FFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{642C55A1-CC3A-47C2-BEA0-2D5B9B566FFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CE10FF2-231E-48CC-B70F-FA81E2C7BB44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CE10FF2-231E-48CC-B70F-FA81E2C7BB44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CE10FF2-231E-48CC-B70F-FA81E2C7BB44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CE10FF2-231E-48CC-B70F-FA81E2C7BB44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
