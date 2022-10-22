@@ -5,6 +5,8 @@
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
+
+            Console.WriteLine(char.ConvertFromUtf32('A'+1));
         }
 
         /// <summary>
